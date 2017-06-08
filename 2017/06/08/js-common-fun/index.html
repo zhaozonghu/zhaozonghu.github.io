@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="正则表达式获取地址栏参数function GetQueryString(name){      var reg = new RegExp(&amp;quot;(^|&amp;amp;)&amp;quot;+ name +&amp;quot;=([^&amp;amp;]*)(&amp;amp;|$)&amp;quot;);      var r = window.location.search.substr(1).match(reg);      if(">
+<meta name="description" content="正则表达式获取地址栏参数function GetQueryString(t){     var n = new RegExp(&amp;quot;(^|&amp;amp;)&amp;quot; + t + &amp;quot;=([^&amp;amp;]*)(&amp;amp;|$)&amp;quot;, &amp;quot;i&amp;quot;), e = window.location.search.substr(1).match(n);     return">
 <meta name="keywords" content="web,js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Javascript常用方法">
 <meta property="og:url" content="http://zhaozonghu.me/2017/06/08/js-common-fun/index.html">
 <meta property="og:site_name" content="Mr.zhao">
-<meta property="og:description" content="正则表达式获取地址栏参数function GetQueryString(name){      var reg = new RegExp(&amp;quot;(^|&amp;amp;)&amp;quot;+ name +&amp;quot;=([^&amp;amp;]*)(&amp;amp;|$)&amp;quot;);      var r = window.location.search.substr(1).match(reg);      if(">
-<meta property="og:updated_time" content="2017-06-08T02:06:00.540Z">
+<meta property="og:description" content="正则表达式获取地址栏参数function GetQueryString(t){     var n = new RegExp(&amp;quot;(^|&amp;amp;)&amp;quot; + t + &amp;quot;=([^&amp;amp;]*)(&amp;amp;|$)&amp;quot;, &amp;quot;i&amp;quot;), e = window.location.search.substr(1).match(n);     return">
+<meta property="og:updated_time" content="2017-06-08T06:20:09.518Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript常用方法">
-<meta name="twitter:description" content="正则表达式获取地址栏参数function GetQueryString(name){      var reg = new RegExp(&amp;quot;(^|&amp;amp;)&amp;quot;+ name +&amp;quot;=([^&amp;amp;]*)(&amp;amp;|$)&amp;quot;);      var r = window.location.search.substr(1).match(reg);      if(">
+<meta name="twitter:description" content="正则表达式获取地址栏参数function GetQueryString(t){     var n = new RegExp(&amp;quot;(^|&amp;amp;)&amp;quot; + t + &amp;quot;=([^&amp;amp;]*)(&amp;amp;|$)&amp;quot;, &amp;quot;i&amp;quot;), e = window.location.search.substr(1).match(n);     return">
 
 
 
@@ -351,12 +351,12 @@
       
 
       
-        <h6 id="正则表达式获取地址栏参数"><a href="#正则表达式获取地址栏参数" class="headerlink" title="正则表达式获取地址栏参数"></a>正则表达式获取地址栏参数</h6><pre><code>function GetQueryString(name){
-     var reg = new RegExp(&quot;(^|&amp;)&quot;+ name +&quot;=([^&amp;]*)(&amp;|$)&quot;);
-     var r = window.location.search.substr(1).match(reg);
-     if(r!=null)return  unescape(r[2]); return null;
+        <h6 id="正则表达式获取地址栏参数"><a href="#正则表达式获取地址栏参数" class="headerlink" title="正则表达式获取地址栏参数"></a>正则表达式获取地址栏参数</h6><pre><code>function GetQueryString(t){
+    var n = new RegExp(&quot;(^|&amp;)&quot; + t + &quot;=([^&amp;]*)(&amp;|$)&quot;, &quot;i&quot;), e = window.location.search.substr(1).match(n);
+    return null != e ? decodeURI(e[2]) : null
 }
-</code></pre><h6 id="获取指定数量随机数"><a href="#获取指定数量随机数" class="headerlink" title="获取指定数量随机数"></a>获取指定数量随机数</h6><pre><code>//max数组返回[0-max]
+</code></pre><a id="more"></a>
+<h6 id="获取指定数量随机数"><a href="#获取指定数量随机数" class="headerlink" title="获取指定数量随机数"></a>获取指定数量随机数</h6><pre><code>//max数组返回[0-max]
 function randomNum(max){
     var randoms=[];
     while (true)
@@ -375,6 +375,131 @@ function randomNum(max){
     }
     return randoms;
 }
+</code></pre><h6 id="获取浏览器类型"><a href="#获取浏览器类型" class="headerlink" title="获取浏览器类型"></a>获取浏览器类型</h6><pre><code>function getBrowserType() {
+    var t = navigator.userAgent.toLowerCase(), n = &quot;&quot;;
+    return t.indexOf(&quot;msie&quot;) &gt; 0 &amp;&amp; (n = &quot;IE&quot;), t.indexOf(&quot;firefox&quot;) &gt; 0 &amp;&amp; (n = &quot;firefox&quot;), t.indexOf(&quot;chrome&quot;) &gt; 0 &amp;&amp; t.indexOf(&quot;mb2345browser&quot;) &lt; 0 &amp;&amp; t.indexOf(&quot;360 aphone browser&quot;) &lt; 0 &amp;&amp; (n = &quot;chrome&quot;), (t.indexOf(&quot;360 aphone browser&quot;) &gt; 0 || t.indexOf(&quot;qhbrowser&quot;) &gt; 0) &amp;&amp; (n = &quot;360&quot;), t.indexOf(&quot;ucbrowser&quot;) &gt; 0 &amp;&amp; (n = &quot;UC&quot;), t.indexOf(&quot;micromessenger&quot;) &gt; 0 &amp;&amp; (n = &quot;WeChat&quot;), (t.indexOf(&quot;mqqbrowser&quot;) &gt; 0 || t.indexOf(&quot;qq&quot;) &gt; 0) &amp;&amp; t.indexOf(&quot;micromessenger&quot;) &lt; 0 &amp;&amp; (n = &quot;QQ&quot;), t.indexOf(&quot;miuibrowser&quot;) &gt; 0 &amp;&amp; (n = &quot;MIUI&quot;), t.indexOf(&quot;mb2345browser&quot;) &gt; 0 &amp;&amp; (n = &quot;2345&quot;), t.indexOf(&quot;sogoumobilebrowser&quot;) &gt; 0 &amp;&amp; (n = &quot;sogou&quot;), t.indexOf(&quot;liebaofast&quot;) &gt; 0 &amp;&amp; (n = &quot;liebao&quot;), t.indexOf(&quot;safari&quot;) &gt; 0 &amp;&amp; t.indexOf(&quot;chrome&quot;) &lt; 0 &amp;&amp; t.indexOf(&quot;ucbrowser&quot;) &lt; 0 &amp;&amp; t.indexOf(&quot;micromessenger&quot;) &lt; 0 &amp;&amp; t.indexOf(&quot;mqqbrowser&quot;) &lt; 0 &amp;&amp; t.indexOf(&quot;miuibrowser&quot;) &lt; 0 &amp;&amp; t.indexOf(&quot;mb2345browser&quot;) &lt; 0 &amp;&amp; t.indexOf(&quot;sogoumobilebrowser&quot;) &lt; 0 &amp;&amp; t.indexOf(&quot;liebaofast&quot;) &lt; 0 &amp;&amp; t.indexOf(&quot;qhbrowser&quot;) &lt; 0 &amp;&amp; (n = &quot;safari&quot;), n
+}
+</code></pre><h6 id="获取设备系统类型及版本号"><a href="#获取设备系统类型及版本号" class="headerlink" title="获取设备系统类型及版本号"></a>获取设备系统类型及版本号</h6><pre><code>function getOsType() {
+    var t = navigator.userAgent.toLowerCase(), n = &quot;&quot;;
+    if (/android/i.test(navigator.userAgent)) {
+        var e = t.indexOf(&quot;android&quot;);
+        version = t.substr(e + 8, 3), n = &quot;Android &quot; + version
+    }
+    if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+        var e = t.indexOf(&quot;os&quot;);
+        version = t.substr(e + 3, 3), n = &quot;iOS &quot; + version
+    }
+    return !/Linux/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent) || /(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent) || (n = &quot;Linux&quot;),
+    /windows|win32/i.test(navigator.userAgent) &amp;&amp; (n = &quot;windows32&quot;), /windows|win32/i.test(navigator.userAgent) &amp;&amp; (n = &quot;windows64&quot;), n
+}
+</code></pre><h6 id="向页面注入js代码"><a href="#向页面注入js代码" class="headerlink" title="向页面注入js代码"></a>向页面注入js代码</h6><pre><code>//参数说明：
+// t：js内容（字符串）
+// n: 回调函数
+// e: 注入js的位置，eg：document.getElementById(&apos;indexHeader&apos;)
+function createScript(t, n, e) {
+    if (t) {
+        var r = document.getElementsByTagName(&quot;head&quot;)[0], i = document.createElement(&quot;script&quot;);
+        i.setAttribute(&quot;type&quot;, &quot;text/javascript&quot;), i.innerHTML = t, e ? e.appendChild(i) : r.appendChild(i), n()
+    }
+}
+</code></pre><h6 id="向页面注入css代码"><a href="#向页面注入css代码" class="headerlink" title="向页面注入css代码"></a>向页面注入css代码</h6><pre><code>//参数说明：
+// t：css内容（字符串）
+// n: 回调函数
+// e: 注入css的位置，eg：document.getElementById(&apos;indexHeader&apos;)
+function createStyle(t, n, e) {
+    if (t) {
+        var r = document.getElementsByTagName(&quot;head&quot;)[0], i = document.createElement(&quot;style&quot;);
+        i.innerHTML = t, e ? e.appendChild(i) : r.appendChild(i), n &amp;&amp; n()
+    }
+}
+</code></pre><h6 id="时间格式化"><a href="#时间格式化" class="headerlink" title="时间格式化"></a>时间格式化</h6><pre><code>//调用方法:getSpecialTimeStr(&apos;2017-04-14 15:50:00&apos;)
+function getSpecialTimeStr(t) {
+    var n = this.strToTime(t);
+    if (!n)return !1;
+    var e = (new Date).getTime(), r = Number(e - n), i = 864e5, o = 36e5, u = 6e4;
+    if (r &gt;= i) {
+        var a = r / i;
+        return a &gt; 2 ? this.timeToString(n) : a &gt; 1 ? &quot;前天&quot; : &quot;昨天&quot;
+    }
+    return r &gt;= o ? Math.floor(r / o) + &quot;小时前&quot; : r &gt;= u ? Math.floor(r / u) + &quot;分钟前&quot; : &quot;最新&quot;
+}
+</code></pre><h6 id="公用方法"><a href="#公用方法" class="headerlink" title="公用方法"></a>公用方法</h6><pre><code>var GLOBAL = {},
+ GLOBAL.Js = {
+    trim: function (t) {
+        return t.replace(/^\s+|\s+$/g, &quot;&quot;)
+    }, isNumber: function (t) {
+        return !isNaN(t)
+    }, isString: function (t) {
+        return &quot;string&quot; == typeof t
+    }, isBoolean: function (t) {
+        return &quot;boolean&quot; == typeof t
+    }, isFunction: function (t) {
+        return &quot;function&quot; == typeof t
+    }, isNull: function (t) {
+        return null === t
+    }, isUndefined: function (t) {
+        return &quot;undefined&quot; == typeof t
+    }, isEmpty: function (t) {
+        return /^\s*$/.test(t)
+    }, isArray: function (t) {
+        return t instanceof Array
+    }
+},
+//cookie操作
+GLOBAL.Cookie = {
+    set: function (t, n, e) {
+        var r = e ? 60 * Number(e) * 60 * 1e3 : 864e5, i = new Date;
+        i.setTime(i.getTime() + r);
+        var o = e ? &quot;; expires=&quot; + i.toUTCString() : &quot;&quot;;
+        document.cookie = t + &quot;=&quot; + encodeURI(n) + o;
+    }, get: function (t) {
+        var arr,reg=new RegExp(&quot;(^| )&quot;+t+&quot;=([^;]*)(;|$)&quot;);
+        if(arr=document.cookie.match(reg)){ return unescape(arr[2]);}else{return null;}
+    }, del: function (t) {
+        var cval=this.get(t);
+        if(cval!=null){
+            document.cookie= t + &quot;=&quot;+cval+&quot;;expires=&quot;+(new Date(0)).toGMTString();
+        }
+    }
+}, 
+//数组比较返回差异的地方
+GLOBAL.Array = {
+    difference: function (t, n) {
+        try {
+            var e = [], r = 0, i = t.length;
+            for (r = 0; r &lt; i; r++)n.contains(t[r]) || e.push(t[r]);
+            return e
+        } catch (o) {
+            return console.error(o), t
+        }
+    }
+}, 
+//终端判断
+GLOBAL.Os = function () {
+    for (var t = navigator.userAgent, n = new Array(&quot;Android&quot;, &quot;iPhone&quot;, &quot;SymbianOS&quot;, &quot;Windows Phone&quot;, &quot;iPad&quot;, &quot;iPod&quot;), e = !1, r = 0; r &lt; n.length; r++)if (t.indexOf(n[r]) &gt; -1) {
+        e = !0;
+        break
+    }
+    return {
+        mobile: e,
+        ios: !!t.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+        android: t.indexOf(&quot;Android&quot;) &gt; -1 || t.indexOf(&quot;Linux&quot;) &gt; -1,
+        iphone: t.indexOf(&quot;iPhone&quot;) &gt; -1,
+        ipad: t.indexOf(&quot;iPad&quot;) &gt; -1,
+        webapp: t.indexOf(&quot;Safari&quot;) === -1
+    }
+}(), 
+//浏览器类型判断
+GLOBAL.Browser = function () {
+    var t = navigator.userAgent, n = GLOBAL.Os.mobile;
+    return n ? {
+        wechat: t.indexOf(&quot;MicroMessenger&quot;) &gt; -1,
+        weibo: t.toLowerCase().indexOf(&quot;weibo&quot;) &gt; -1,
+        qq: t.indexOf(&quot;QQ/&quot;) &gt; -1,
+        qqbrowser: t.indexOf(&quot;MQQBrowser&quot;) &gt; -1,
+        qybrowser: t.indexOf(&quot;QianYing&quot;) &gt; -1
+    } : {}
+}();
 </code></pre>
       
     </div>
@@ -571,7 +696,7 @@ function randomNum(max){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#正则表达式获取地址栏参数"><span class="nav-number">1.</span> <span class="nav-text">正则表达式获取地址栏参数</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#获取指定数量随机数"><span class="nav-number">2.</span> <span class="nav-text">获取指定数量随机数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#正则表达式获取地址栏参数"><span class="nav-number">1.</span> <span class="nav-text">正则表达式获取地址栏参数</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#获取指定数量随机数"><span class="nav-number">2.</span> <span class="nav-text">获取指定数量随机数</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#获取浏览器类型"><span class="nav-number">3.</span> <span class="nav-text">获取浏览器类型</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#获取设备系统类型及版本号"><span class="nav-number">4.</span> <span class="nav-text">获取设备系统类型及版本号</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#向页面注入js代码"><span class="nav-number">5.</span> <span class="nav-text">向页面注入js代码</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#向页面注入css代码"><span class="nav-number">6.</span> <span class="nav-text">向页面注入css代码</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#时间格式化"><span class="nav-number">7.</span> <span class="nav-text">时间格式化</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#公用方法"><span class="nav-number">8.</span> <span class="nav-text">公用方法</span></a></li></ol></div>
             
 
           </div>
