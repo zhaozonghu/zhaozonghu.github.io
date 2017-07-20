@@ -99,7 +99,7 @@
 <meta property="og:url" content="http://zhaozonghu.me/2017/06/12/gulp/index.html">
 <meta property="og:site_name" content="Mr.zhao">
 <meta property="og:image" content="http://or49syh5a.bkt.clouddn.com/525072a07f737c14623sfefs1.png">
-<meta property="og:updated_time" content="2017-06-14T02:07:59.030Z">
+<meta property="og:updated_time" content="2017-07-20T00:48:54.926Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Gulp 自动化构建工具-初探">
 <meta name="twitter:image" content="http://or49syh5a.bkt.clouddn.com/525072a07f737c14623sfefs1.png">
@@ -382,6 +382,7 @@ var less = require(&apos;gulp-less&apos;);//less编译
 var plumber = require(&apos;gulp-plumber&apos;);//异常处理
 var notify = require(&apos;gulp-notify&apos;);
 var autoprefixer = require(&apos;gulp-autoprefixer&apos;);//css3前缀自动补全
+var px2rem = require(&apos;gulp-px3rem&apos;);//px转换rem
 
 //清除文件
 gulp.task(&apos;clean&apos;,function(cb){
@@ -433,6 +434,12 @@ gulp.task(&apos;autoFx&apos;,[&apos;css&apos;],function(){
             browsers: [&apos;last 5 versions&apos;]
         }))
         .pipe(gulp.dest(&apos;./dist/css&apos;));
+});
+//css px2rem
+gulp.task(&apos;px2rem&apos;, function() {
+    return gulp.src(&apos;./dist/css/*.css&apos;)
+        .pipe(px2rem())
+        .pipe(gulp.dest(&apos;./dist/css&apos;))
 });
 //压缩html
 gulp.task(&apos;html&apos;, function() {
@@ -489,6 +496,7 @@ gulp.task(&apos;tigger&apos;,[&apos;css&apos;,&apos;js&apos;,&apos;img&apos;,&ap
 <li><a href="https://www.npmjs.com/package/gulp-rev/" target="_blank" rel="external">gulp-rev</a>：版本控制</li>
 <li><a href="https://www.npmjs.com/package/gulp-rev-collector/" target="_blank" rel="external">gulp-rev-collector</a>：文件名称替换（rev）</li>
 <li><a href="https://www.npmjs.com/package/gulp-autoprefixer" target="_blank" rel="external">gulp-autoprefixer</a>：css3前缀补全</li>
+<li><a href="https://www.npmjs.com/package/gulp-px3rem" target="_blank" rel="external">gulp-px3rem</a>：css3前缀补全</li>
 </ol>
 <blockquote>
 <p><a href="http://www.gulpjs.com.cn/" target="_blank" rel="external">gulp中文教程</a></p>
