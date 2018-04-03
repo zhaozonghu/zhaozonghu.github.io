@@ -100,7 +100,7 @@
 <meta property="og:url" content="http://zhaozonghu.me/2017/09/28/js-array/index.html">
 <meta property="og:site_name" content="Mr.zhao">
 <meta property="og:description" content="concatconcat() 方法用于连接两个或多个数组。 该方法不会改变现有的数组，而仅仅会返回被连接数组的一个副本。 arrayObject.concat(arrayX,arrayX,......,arrayX) 返回值 返回一个新的数组。该数组是通过把所有 arrayX 参数添加到 arrayObject 中生成的。如果要进行 concat() 操作的参数是数组，那么添加的是数组中的元素，而">
-<meta property="og:updated_time" content="2017-09-28T05:40:26.430Z">
+<meta property="og:updated_time" content="2018-04-03T02:31:15.543Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js数组API">
 <meta name="twitter:description" content="concatconcat() 方法用于连接两个或多个数组。 该方法不会改变现有的数组，而仅仅会返回被连接数组的一个副本。 arrayObject.concat(arrayX,arrayX,......,arrayX) 返回值 返回一个新的数组。该数组是通过把所有 arrayX 参数添加到 arrayObject 中生成的。如果要进行 concat() 操作的参数是数组，那么添加的是数组中的元素，而">
@@ -606,19 +606,6 @@ myFish.splice(2, 0, &apos;drum&apos;); // insert &apos;drum&apos; at 2-index pos
 
 myFish.splice(2, 1); // remove 1 item at 2-index position (that is, &quot;drum&quot;)
 // myFish is [&quot;angel&quot;, &quot;clown&quot;, &quot;mandarin&quot;, &quot;sturgeon&quot;]
-</code></pre><h6 id="splice"><a href="#splice-1" class="headerlink" title="splice"></a>splice</h6><p>splice()方法通过删除现有元素和/或添加新元素来更改数组的内容。</p>
-<p>array.splice(start)<br>array.splice(start, deleteCount)<br>array.splice(start, deleteCount, item1, item2, …)<br>start：开始位置。</p>
-<p>deleteCount：如果deleteCount为0，则没有删除元素。在这种情况下，您应该指定至少一个新元素。</p>
-<p>item1， item2：添加到数组中的元素，从开始索引开始。如果没有指定任何元素，splice()将只删除数组中的元素。</p>
-<p>返回值</p>
-<p>包含已删除元素的数组。如果只删除了一个元素，则返回一个元素数组。如果没有删除元素，则返回空数组。</p>
-<pre><code>var myFish = [&apos;angel&apos;, &apos;clown&apos;, &apos;mandarin&apos;, &apos;sturgeon&apos;];
-
-myFish.splice(2, 0, &apos;drum&apos;); // insert &apos;drum&apos; at 2-index position
-// myFish is [&quot;angel&quot;, &quot;clown&quot;, &quot;drum&quot;, &quot;mandarin&quot;, &quot;sturgeon&quot;]
-
-myFish.splice(2, 1); // remove 1 item at 2-index position (that is, &quot;drum&quot;)
-// myFish is [&quot;angel&quot;, &quot;clown&quot;, &quot;mandarin&quot;, &quot;sturgeon&quot;]
 </code></pre><h6 id="of"><a href="#of" class="headerlink" title="of"></a>of</h6><p>Array.of()方法创建一个新的数组实例，该数组实例的参数数目不定，不管参数的类型或类型。</p>
 <p>Array.of(element0[, element1[, …[, elementN]]])<br>elementN：创建数组的元素</p>
 <p>返回值</p>
@@ -772,7 +759,7 @@ if (!Array.of) {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -840,7 +827,7 @@ if (!Array.of) {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#concat"><span class="nav-number">1.</span> <span class="nav-text">concat</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#copywithin"><span class="nav-number">2.</span> <span class="nav-text">copyWithin</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#entries"><span class="nav-number">3.</span> <span class="nav-text">entries</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#from"><span class="nav-number">4.</span> <span class="nav-text">from</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#every"><span class="nav-number">5.</span> <span class="nav-text">every</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#fill"><span class="nav-number">6.</span> <span class="nav-text">fill</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#filter"><span class="nav-number">7.</span> <span class="nav-text">filter</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#find"><span class="nav-number">8.</span> <span class="nav-text">find</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#findindex"><span class="nav-number">9.</span> <span class="nav-text">findIndex</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#foreach"><span class="nav-number">10.</span> <span class="nav-text">forEach</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#includes"><span class="nav-number">11.</span> <span class="nav-text">includes</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#indexof"><span class="nav-number">12.</span> <span class="nav-text">indexOf</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#join"><span class="nav-number">13.</span> <span class="nav-text">join</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#keys"><span class="nav-number">14.</span> <span class="nav-text">keys</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#lastindexof"><span class="nav-number">15.</span> <span class="nav-text">lastIndexOf</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#map"><span class="nav-number">16.</span> <span class="nav-text">map</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#reduce"><span class="nav-number">17.</span> <span class="nav-text">reduce</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#some"><span class="nav-number">18.</span> <span class="nav-text">some</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#splice"><span class="nav-number">19.</span> <span class="nav-text">splice</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#splice"><span class="nav-number">20.</span> <span class="nav-text">splice</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#of"><span class="nav-number">21.</span> <span class="nav-text">of</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#concat"><span class="nav-number">1.</span> <span class="nav-text">concat</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#copywithin"><span class="nav-number">2.</span> <span class="nav-text">copyWithin</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#entries"><span class="nav-number">3.</span> <span class="nav-text">entries</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#from"><span class="nav-number">4.</span> <span class="nav-text">from</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#every"><span class="nav-number">5.</span> <span class="nav-text">every</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#fill"><span class="nav-number">6.</span> <span class="nav-text">fill</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#filter"><span class="nav-number">7.</span> <span class="nav-text">filter</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#find"><span class="nav-number">8.</span> <span class="nav-text">find</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#findindex"><span class="nav-number">9.</span> <span class="nav-text">findIndex</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#foreach"><span class="nav-number">10.</span> <span class="nav-text">forEach</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#includes"><span class="nav-number">11.</span> <span class="nav-text">includes</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#indexof"><span class="nav-number">12.</span> <span class="nav-text">indexOf</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#join"><span class="nav-number">13.</span> <span class="nav-text">join</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#keys"><span class="nav-number">14.</span> <span class="nav-text">keys</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#lastindexof"><span class="nav-number">15.</span> <span class="nav-text">lastIndexOf</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#map"><span class="nav-number">16.</span> <span class="nav-text">map</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#reduce"><span class="nav-number">17.</span> <span class="nav-text">reduce</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#some"><span class="nav-number">18.</span> <span class="nav-text">some</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#splice"><span class="nav-number">19.</span> <span class="nav-text">splice</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#of"><span class="nav-number">20.</span> <span class="nav-text">of</span></a></li></ol></div>
             
 
           </div>

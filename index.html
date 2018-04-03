@@ -246,6 +246,169 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://zhaozonghu.me/2018/04/03/web-app/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mr.zhao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr.zhao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/03/web-app/" itemprop="url">在ios桌面添加web站点图标及增加启动画面</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-03T10:35:36+08:00">
+                2018-04-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>设置全屏：</p>
+<pre><code>&lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot;&gt;
+&lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot; black &quot; /&gt;
+&lt;meta name=&quot;apple-mobile-web-app-title&quot; content=&quot;应用名称&quot; /&gt;
+&lt;meta name=&quot;full-screen&quot; content=&quot;yes&quot;&gt;
+&lt;meta name=&quot;x5-fullscreen&quot; content=&quot;true&quot;&gt;
+&lt;meta name=&quot;applicable-device&quot; content=&quot;mobile&quot;&gt;
+</code></pre><p>添加图标到主屏幕：</p>
+<pre><code>&lt;link rel=&quot;apple-touch-icon&quot; href=&quot;images/app/144x144.png&quot; /&gt;
+&lt;link rel=&quot;apple-touch-icon-precomposed&quot; ref=&quot;images/app/144x144.png&quot; /&gt;
+&lt;link rel=&quot;apple-touch-startup-image&quot; ref=&quot;images/app/144x144.png&quot; /&gt;
+</code></pre><p>添加启动界面：</p>
+<pre><code>&lt;link rel=&quot;apple-touch-startup-image&quot; href=&quot;images/app/750x1294.png&quot; media=&quot;(device-width: 375px) and (-webkit-device-pixel-ratio: 2)&quot;&gt;
+&lt;link rel=&quot;apple-touch-startup-image&quot; href=&quot;images/app/1242x2148.png&quot; media=&quot;(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3)&quot;&gt;
+&lt;link rel=&quot;apple-touch-startup-image&quot; href=&quot;images/app/2048x1496.png&quot; sizes=&quot;2048x1496&quot; media=&quot;screen and (min-device-width:481px) and (max-device-width:1024px) and (orientation:landscape) and (-webkit-min-device-pixel-ratio: 2)&quot;&gt;  
+&lt;link rel=&quot;apple-touch-startup-image&quot; href=&quot;images/app/1536x2008.png&quot; sizes=&quot;1536x2008&quot; media=&quot;screen and (min-device-width:481px) and (max-device-width:1024px) and (orientation:portrait) and (-webkit-min-device-pixel-ratio: 2)&quot;&gt;  
+</code></pre><p>阻止iOS Web APP中点击链接跳转到Safari 浏览器新标签页：</p>
+<pre><code>&lt;script&gt;
+    if((&apos;standalone&apos; in window.navigator)&amp;&amp;window.navigator.standalone){
+        var noddy,remotes=false;
+        document.addEventListener(&apos;click&apos;,function(event){
+                noddy=event.target;
+                while(noddy.nodeName!==&apos;A&apos;&amp;&amp;noddy.nodeName!==&apos;HTML&apos;) noddy=noddy.parentNode;
+                if(&apos;href&apos; in noddy&amp;&amp;noddy.href.indexOf(&apos;http&apos;)!==-1&amp;&amp;(noddy.href.indexOf(document.location.host)!==-1||remotes)){
+                        event.preventDefault();
+                        document.location.href=noddy.href;
+                }
+        },false);
+    }
+&lt;/script&gt;
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://zhaozonghu.me/2018/02/06/share/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -625,6 +788,7 @@
 <p>10.vscode-fileheader： 文件注释（顶部）</p>
 <p>11.vscode-icons： 文件图标</p>
 <p>12.html5 boilerplate: html文件模板</p>
+<p>13.Path Intellisense：文件路径提示</p>
 <p>正则匹配：空行 – ^\s<em>\n     元素 – ([^”]</em>)</p>
 
           
@@ -1603,145 +1767,6 @@ function openApp(appKey,refresh) {
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://zhaozonghu.me/2017/06/06/sky-nine/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mr.zhao">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.zhao">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/06/sky-nine/" itemprop="url">天行九歌</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-06T16:24:45+08:00">
-                2017-06-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/动漫/" itemprop="url" rel="index">
-                    <span itemprop="name">动漫</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>焰灵姬，中国动画《天行九歌》系列（《秦时明月》系列姐妹篇）中的原创女性角色。来自百越的一位柔媚如水，热情似火的神秘女子。有着操纵火的能力。</p>
-<p><img src="http://or49syh5a.bkt.clouddn.com/37d3d539b6003af30ec4f6a63c2ac65c1138b6fd.jpg" alt=""><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/06/sky-nine/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1794,7 +1819,7 @@ function openApp(appKey,refresh) {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
